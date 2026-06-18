@@ -5,10 +5,9 @@ module.exports = {
     .setName("ping")
     .setDescription("Returns bot's ping."),
   async execute(interaction, client) {
-    const message = await interaction.deferReply({
-      fetchReply: true,
-    });
-
+    await interaction.deferReply();
+    const message = await interaction.fetchReply();
+    
     const newMessage = `API Latency: ${client.ws.ping}\nClient Ping: ${
       message.createdTimestamp - interaction.createdTimestamp
     }`;

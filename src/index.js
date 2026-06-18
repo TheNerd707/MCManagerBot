@@ -26,6 +26,8 @@ client.selectMenus = new Collection();
 client.modals = new Collection();
 client.commandArray = [];
 
+client.rcon = null;
+
 function fileR(file) {
   if (file.endsWith(".js")) {
     require(`../${file}`)(client);
